@@ -1,0 +1,14 @@
+package com.whispro.TodoList.Todo.application.out;
+
+import com.whispro.TodoList.Todo.domain.Todo;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+public interface TodoRepository {
+    Todo save(Todo todo);
+    Todo deleteById(UUID todoID);
+    Optional<Todo> findById(UUID id);
+    List<Todo> findAll();
+}
