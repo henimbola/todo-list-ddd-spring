@@ -1,4 +1,8 @@
 package com.whispro.TodoList.Todo.application.in;
 
-public interface CreateTodo {
+import com.whispro.TodoList.Todo.domain.Todo;
+
+import java.util.function.Function;
+
+public interface CreateTodo extends Function<TodoCommand, Todo> {
 }
