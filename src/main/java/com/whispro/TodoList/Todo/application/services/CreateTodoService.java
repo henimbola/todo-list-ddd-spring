@@ -17,9 +17,7 @@ public class CreateTodoService implements CreateTodo {
 
     @Override
     public Todo apply(CreateTodoCommand createTodoCommand) {
-
         Todo todo = Todo.builder().title(createTodoCommand.getTitle()).status(Status.CREATED).build();
-
-        return todoRepositoryPort.save(todo);
+        return todoRepositoryPort.create(todo);
     }
 }

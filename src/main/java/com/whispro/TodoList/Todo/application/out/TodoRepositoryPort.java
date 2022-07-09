@@ -7,7 +7,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface TodoRepositoryPort {
-    Todo save(Todo todo);
+    Todo create(Todo todo);
     Todo deleteById(UUID todoID);
     Optional<Todo> findById(UUID id);
     List<Todo> findAll();
