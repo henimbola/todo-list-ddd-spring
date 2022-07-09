@@ -32,4 +32,9 @@ public class TodoRepositoryAdapter implements TodoRepositoryPort {
     public List<Todo> findAll() {
         return null;
     }
+
+    @Override
+    public void validateTodo(UUID todoID, Todo todo) {
+
+    }
 }

@@ -11,4 +11,5 @@ public interface TodoRepositoryPort {
     Todo deleteById(UUID todoID);
     Optional<Todo> findById(UUID id);
     List<Todo> findAll();
+    void validateTodo(UUID todoID, Todo todo);
 }

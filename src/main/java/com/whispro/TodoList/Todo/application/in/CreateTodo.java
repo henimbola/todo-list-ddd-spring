@@ -4,5 +4,5 @@ import com.whispro.TodoList.Todo.domain.Todo;
 
 import java.util.function.Function;
 
-public interface CreateTodo extends Function<TodoCommand, Todo> {
+public interface CreateTodo extends Function<CreateTodoCommand, Todo> {
 }
