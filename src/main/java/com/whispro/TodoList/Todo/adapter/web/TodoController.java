@@ -22,7 +22,6 @@ public class TodoController {
     @PostMapping
     public ResponseEntity<Void> createTodo(@RequestBody CreateTodoRequest createTodoRequest) {
         Todo todo = createTodoService.apply(CreateTodoCommand.builder().title(createTodoRequest.getTitle()).build());
-
         return ResponseEntity.created(URI.create(String.format("/api/todos/%s", todo.getTodoId()))).build();
     }
 }
