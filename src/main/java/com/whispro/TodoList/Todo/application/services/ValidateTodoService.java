@@ -20,7 +20,7 @@ public class ValidateTodoService implements ValidateTodo {
 
     @Builder
     @Getter
-    public class ValidateTodoCommand {
+    public static class ValidateTodoCommand {
         UUID id;
         Todo todo;
     }
