@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Objects;
 import java.util.UUID;
 
 @Getter
@@ -29,4 +30,20 @@ public class TodoEntity {
     @Column
     @With
     private State state;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TodoEntity that = (TodoEntity) o;
+        return Objects.equals(id, that.id) && Objects.equals(title, that.title) && state == that.state;
+    }
+
+    @Override
+    public int hashCode() {
+        int idLength = id.toString().length();
+        int titleLength = title.length();
+        int stateLength = state.toString().length();
+        return idLength + titleLength + stateLength;
+    }
 }
