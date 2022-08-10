@@ -1,5 +1,6 @@
 package com.whispro.TodoList.Todo.application.services;
 
+import com.whispro.TodoList.Todo.application.exceptions.TodoNotFoundException;
 import com.whispro.TodoList.Todo.application.in.RetrieveTodo;
 import com.whispro.TodoList.Todo.application.out.TodoRepositoryPort;
 import com.whispro.TodoList.Todo.domain.Todo;
@@ -20,6 +21,6 @@ public class RetrieveTodoService implements RetrieveTodo {
 
     @Override
     public Todo findTodo(UUID id) {
-        return todoRepositoryPort.findById(id).orElseThrow(() -> new RuntimeException("Todo not found"));
+        return todoRepositoryPort.findById(id).orElseThrow(TodoNotFoundException::new);
     }
 }
