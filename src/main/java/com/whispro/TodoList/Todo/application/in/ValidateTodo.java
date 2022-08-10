@@ -6,5 +6,5 @@ import com.whispro.TodoList.Todo.domain.Todo;
 import java.util.UUID;
 
 public interface ValidateTodo {
-    void validate(ValidateTodoService.ValidateTodoCommand validateTodoCommand);
+    void validate(UUID id);
 }

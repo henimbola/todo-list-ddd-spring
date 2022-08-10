@@ -8,8 +8,9 @@ import java.util.UUID;
 
 public interface TodoRepositoryPort {
     Todo create(Todo todo);
-    Todo deleteById(UUID todoID);
+    void deleteById(UUID todoID);
     Optional<Todo> findById(UUID id);
     List<Todo> findAll();
-    void validateTodo(UUID todoID, Todo todo);
+
+    void validateTodo(UUID todoID);
 }
