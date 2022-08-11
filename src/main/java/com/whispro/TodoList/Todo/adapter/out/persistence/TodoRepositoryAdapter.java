@@ -41,6 +41,11 @@ public class TodoRepositoryAdapter implements TodoRepositoryPort {
     }
 
     @Override
+    public Todo updateTodo(Todo todo) {
+        return todoMapper.map(todoJpaRepository.save(todoMapper.map(todo)));
+    }
+
+    @Override
     public void validateTodo(UUID todoID) {
         todoJpaRepository.save(findTodoEntityById(todoID).withState(State.FINISHED));
     }

@@ -12,5 +12,7 @@ public interface TodoRepositoryPort {
     Optional<Todo> findById(UUID id);
     List<Todo> findAll();
 
+    Todo updateTodo(Todo todo);
+
     void validateTodo(UUID todoID);
 }
